@@ -13,7 +13,7 @@
  *     そうでなければfalseを返すように実装してください
  *  6. 下記のmain関数が動くように、それぞれ実装をしてください。main関数の修正は不要です。
  *  　　1 ~ 5 が完了していれば、toStringのメソッドを実装するだけで大丈夫です。
- *     toStringは下記の内容の文字列が標準出力されることが期待値です。(先頭、末尾の空白は不要）
+ *     toStringは下記の内容の文字列が返却されることが期待値です。(先頭、末尾の空白は不要）
  *
  *      name: ichiro, age: 54, bio: I like to play baseball
  *
@@ -54,7 +54,7 @@ function main () {
   person.isUnderage
 
   person.bio = 'I like to play basketball'
-  person.toString()
+  return person.toString()
 }
 
 module.exports = {
