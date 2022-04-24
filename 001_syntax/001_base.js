@@ -56,9 +56,9 @@ function quotientTwoArgs(a, b) {
   if(b === 0) {
     return null
   } else {
-    return a / b
+    return Math.floor(a / b)
   }
-  // return(b === 0 ?  null :  a / b );
+  // return(b === 0 ?  null :  Math.floor(a / b) );
 }
 
 /**
