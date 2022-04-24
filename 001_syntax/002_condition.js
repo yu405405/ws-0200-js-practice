@@ -26,7 +26,7 @@ function greeding(hour) {
     console.log('Good Morning')
   } else if(hour >= 12 && hour < 17) {
     console.log('Hello')
-  } else if( hour >= 17 && hour < 24 && hour < 4) {
+  } else if( hour >= 17 || hour < 4) {
     console.log('Good Night')
   }
 }
