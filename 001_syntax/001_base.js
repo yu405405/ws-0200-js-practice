@@ -53,7 +53,12 @@ function subtractTwoArgs(a, b) {
  *
  */
 function quotientTwoArgs(a, b) {
-    a || b === 0 ? return null : return a / b ;
+  if(b === 0) {
+    return null
+  } else {
+    return a / b
+  }
+  // return(b === 0 ?  null :  a / b );
 }
 
 /**
