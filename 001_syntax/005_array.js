@@ -71,12 +71,16 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
-  let mySet = new Set(array)
-  if(mySet.size !== array.length) {
-    return true
-  } else {
-    return false
-  }
+  let flag = false;
+  array.forEach(function(val) {
+    let index = array.indexOf(val);
+    let lastIndex = array.lastIndexOf(val)
+
+    if(index !== lastIndex) {
+      flag = true
+    } 
+  })
+  return flag
 }
 
 module.exports = {
