@@ -8,6 +8,12 @@
  */
 
 function getPersonObject() {
+  let myObj = {
+    name: 'Bob',
+    age: 32,
+    gender: 'male'
+  }
+  return myObj
 }
 
 /**
@@ -25,6 +31,10 @@ function getPersonObject() {
  */
 
 function mutateObject(person) {
+  person.name = 'Mary'
+  person.age = 37
+  person.gender = 'female'
+  return person
 }
 
 /**
@@ -48,7 +58,10 @@ function mutateObject(person) {
  *
  */
 
+const persons = ['Bob','Mary','Ann','Mike']
+// Math.ceil(Math.random() * 10)
 function assignNumber(persons) {
+  return Object.assign({}, persons)
 }
 
 /**
@@ -63,6 +76,12 @@ function assignNumber(persons) {
  */
 
 function isDuplicate(array) {
+  let mySet = new Set(array)
+  if(mySet.size !== array.length) {
+    return true
+  } else {
+    return false
+  }
 }
 
 module.exports = {
