@@ -57,11 +57,9 @@ function mutateObject(person) {
  *     }
  *
  */
-
 const persons = ['Bob','Mary','Ann','Mike']
-// Math.ceil(Math.random() * 10)
 function assignNumber(persons) {
-  return Object.assign({}, persons)
+  return {...persons}
 }
 
 /**
