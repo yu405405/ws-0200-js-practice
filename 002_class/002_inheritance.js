@@ -34,6 +34,11 @@ class Animal {
 }
 
 /* ↓ ↓ ↓ こちらに実装 */
+class Dog extends Animal {
+  constructor() {
+     super.who()
+  }
+}
 
 /* ↑ ↑ ↑ こちらに実装 */
 
