@@ -22,18 +22,51 @@
  */
 
 class Person {
+  // レビュー前
+  // constructor(name = '', age = 0, bio = '') {
+  //   this.name = name
+  //   this.age = age
+  //   this.bio = bio
+  //   this.sayHi = () => {
+  //     console.log('Hi!!')
+  //   }
+  // }
+  // static describe() {
+  //   console.log('This is a Person class')
+  // }
+
+  // get isUnderage() {
+  //   if(this.age < 20) {
+  //     return true
+  //   } else {
+  //     return false
+  //   }
+  // }
+  
+  // set bio(text) {
+  //   this.bio = text
+  // }
+
+  // レビュー後
   constructor(name = '', age = 0, bio = '') {
     this.name = name
     this.age = age
     this.bio = bio
-    this.sayHi = () => {
-      console.log('Hi!!')
-    }
   }
+
+  sayHi() {
+    console.log('Hi!!')
+  }
+
+  toString() {
+    return `name: ${this.name}, age: ${this.age}, bio: ${this.bio}`
+    // main関数内で、Personクラスをインスタンス化する時点で、初期値を代入しているため thisでアクセス可能になっている。
+  }
+
   static describe() {
     console.log('This is a Person class')
   }
-
+    
   get isUnderage() {
     if(this.age < 20) {
       return true
@@ -41,11 +74,6 @@ class Person {
       return false
     }
   }
-  
-  // set bio(text) {
-  //   this.bio = text
-  // }
-
 }
 
 function main () {

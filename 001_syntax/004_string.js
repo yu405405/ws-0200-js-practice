@@ -13,11 +13,15 @@ function length(str) {
  */
 
 function lengthIsEven(str) {
-  if(str.length % 2 === 0) {
-    return true
-  } else {
-    return false
-  }
+  // レビュー前
+  // if(str.length % 2 === 0) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+
+  // レビュー後
+  return str.length % 2 === 0
 }
 
 /**
@@ -60,12 +64,22 @@ function substring(str, a, b) {
  * */
 
 function isInclude(a, b) {
-  const str = a.indexOf(b)
-  if(str === -1) {
-    return false
-  } else {
-    return true
-  }
+
+  // レビュー前
+  // const str = a.indexOf(b)
+  // if(str === -1) {
+  //   return false
+  // } else {
+  //   return true
+  // }
+
+  // レビュー後
+  return a.indexOf(b) !== -1
+  // aにbが含まれていなければ -1 を返すので 計算式が一致しているため true
+
+  // もしくは
+  // return a.indexOf(b) === 0
+  // aにbが含まれていれば 0 を返すので これも計算式が一致し true
 }
 
 /**
@@ -84,8 +98,14 @@ function isInclude(a, b) {
  */
 
 function printByChar(str) {
+  // レビュー前
+  // for(let i = 0; i < str.length; i++) {
+  //   console.log(str[i].charAt())
+  // }
+
+  // レビュー後
   for(let i = 0; i < str.length; i++) {
-    console.log(str[i].charAt())
+    console.log(str[i])
   }
 }
 

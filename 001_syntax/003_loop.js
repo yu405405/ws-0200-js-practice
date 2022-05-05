@@ -4,7 +4,13 @@
  */
 
 function printOneToTen() {
-  for(let i = 0; i < 11; i++) {
+  //レビュー前
+  // for(let i = 0; i < 11; i++) {
+  //   console.log(i)
+  // }
+
+  //レビュー後
+  for(let i = 0; i <= 10; i++) {
     console.log(i)
   }
 }
@@ -25,10 +31,10 @@ function printOneToTenDesc() {
  */
 
 function printOneToTenWhile() {
-  let n = -1
-  while(n < 10) {
-    n++
+  let n = 0
+  while(n <= 10) {
     console.log(n)
+    n++
   }
 }
 

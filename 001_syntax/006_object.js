@@ -57,11 +57,16 @@ function mutateObject(person) {
  *     }
  *
  */
-const persons = ['Bob','Mary','Ann','Mike']
 function assignNumber(persons) {
-  return {...persons}
+  let obj = {}
+  for(let i = 0; i < persons.length; i++) {
+    const key = persons[i]
+    obj[key] = Math.floor(Math.random() * 11)
+  }
+  return obj
 }
-
+// const persons = ['Bob','Mary','Ann','Mike']
+// assignNumber(persons)
 /**
  *  6.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
  *      但し、オブジェクトを使って実装すること
@@ -74,11 +79,9 @@ function assignNumber(persons) {
  */
 
 function isDuplicate(array) {
-  let mySet = new Set(array)
-  if(mySet.size !== array.length) {
-    return true
-  } else {
-    return false
+  let obj = {}
+  for(let i = 0; i < array.length; i++) {
+    
   }
 }
 

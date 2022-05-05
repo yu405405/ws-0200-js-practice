@@ -71,16 +71,28 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
-  let flag = false;
-  array.forEach(function(val) {
-    let index = array.indexOf(val);
-    let lastIndex = array.lastIndexOf(val)
+  // レビュー前
+  // let flag = false;
+  // array.forEach(function(val) {
+  //   let index = array.indexOf(val);
+  //   let lastIndex = array.lastIndexOf(val)
 
-    if(index !== lastIndex) {
-      flag = true
-    } 
-  })
-  return flag
+  //   if(index !== lastIndex) {
+  //     flag = true
+  //   } 
+  // })
+  // return flag
+
+  // レビュー後
+  debugger
+  for(let i = 0; i < array.length; i++) {
+    for(let j = i + 1; j < array.length - 1; j++) {
+      if(array[i] === array[j]) {
+        return true
+      }
+    }
+  }
+  return false
 }
 
 module.exports = {
