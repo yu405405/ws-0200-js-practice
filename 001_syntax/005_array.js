@@ -84,9 +84,13 @@ function isDuplicate(array) {
   // return flag
 
   // レビュー後
-  debugger
-  for(let i = 0; i < array.length; i++) {
-    for(let j = i + 1; j < array.length - 1; j++) {
+  // 着目する要素を決めるためのループ
+  for(let i = 0; i < array.length; i++) { 
+
+    // 着目する要素と右隣から最後までを比較するためのループ
+    for(let j = i + 1; j < array.length; j++) {
+
+      // i番目とj番目の要素を比較して同じ場合は、重複があるとみなす。
       if(array[i] === array[j]) {
         return true
       }

@@ -81,9 +81,14 @@ function assignNumber(persons) {
 function isDuplicate(array) {
   let obj = {}
   for(let i = 0; i < array.length; i++) {
-    
+    for(let j = i + 1; j < array.length; j++) {
+      if(array[i] === array[j]) {
+        return true
+      }
+    }
   }
 }
+//アウトプットの形が見えない・・・
 
 module.exports = {
   getPersonObject,
