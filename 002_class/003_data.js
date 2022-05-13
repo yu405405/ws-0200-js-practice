@@ -9,6 +9,8 @@
  *
  */
 
+const { thistle } = require("color-name");
+
 class List {
   data = [];
   /**
@@ -74,7 +76,8 @@ class List {
     // return this.data[this.data.length - 1]
     // 末尾の要素を取得しているのでは??
     // debugger
-    return this.data.slice(-1)[0]
+    // return this.data.slice(-1)[0]
+    return this.data.pop()
   }
 
   /** リストの 先頭の要素を取得する
@@ -83,7 +86,7 @@ class List {
    */
   shift() {
     // TODO:
-    return this.data.slice(0, 1)[0]
+    return this.data.shift()
   }
 
   /** リストの の中から引数に合致する値を取得する
@@ -109,8 +112,8 @@ class List {
    */
   findIndex(target) {
     // TODO:
-    for(let i = 0; i < target.length; i++) {
-      target[i]
+    for(let i = 0; i < this.data.length; i++) {
+      
     }
   }
 
@@ -158,7 +161,7 @@ class Stack {
    */
   push(item) {
     // TODO:
-
+    this.data.push(item)
   }
 
   /** スタックから要素を取得する
@@ -168,7 +171,7 @@ class Stack {
    */
   pop() {
     // TODO:
-    return this.data.slice()
+    return this.data.pop()
   }
 
   /** スタックの末尾の要素を参照する
@@ -178,7 +181,7 @@ class Stack {
    */
   peek() {
     // TODO:
-    return this.data.slice(-1)
+    return this.data[this.data.length - 1]
   }
 }
 
@@ -210,6 +213,7 @@ class Queue {
    */
   enqueue(item) {
     // TODO:
+    this.data.push(item)
   }
 
   /** キューから要素を取得する
@@ -218,6 +222,7 @@ class Queue {
    */
   dequeue() {
     // TODO:
+    return this.data.shift()
   }
 
   /** キューの要素を参照する
@@ -226,6 +231,7 @@ class Queue {
    */
   peek() {
     // TODO:
+    return this.data[0]
   }
 }
 
