@@ -147,9 +147,11 @@ function concat(a, b) {
  */
 
 function size(array) {
+  let arraySize = Number()
   for(let i = 0; i < array.length; i++) {
-    console.log(array[i])
+    arraySize = i + 1
   }
+  return arraySize
 }
 
 /**
