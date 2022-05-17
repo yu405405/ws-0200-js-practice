@@ -147,7 +147,9 @@ function concat(a, b) {
  */
 
 function size(array) {
-  return array.length
+  for(let i = 0; i < array.length; i++) {
+    console.log(array[i])
+  }
 }
 
 /**
@@ -165,7 +167,21 @@ function size(array) {
 
  // 比較する（比較演算子）
 function minMax(array) {
-  return `max: ${Math.max(...array)}, min: ${Math.min(...array)}`
+  // return `max: ${Math.max(...array)}, min: ${Math.min(...array)}`
+  let min = undefined
+  for(let i = 0; i < array.length; i++) {
+    if(!min || min > array[i]) {
+      min = array[i]
+    }
+  }
+  
+  let max = undefined
+  for(let i = 0; i < array.length; i++) {
+    if(!max || max < array[i]) {
+      max = array[i]
+    }
+  }
+  return `max: ${max}, min: ${min}`
 }
 
 /**

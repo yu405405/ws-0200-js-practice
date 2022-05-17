@@ -9,8 +9,18 @@
  *    'library', -1 => 'ibraryl'
  *
  */
+// ①数値（num）の分だけ、最後から文字列を取得して、最初に持ってくる。
+// ②元の文字列（str）の破壊的処理
+// ③取得した文字列①と②を足して、新しい文字列を返す
 function rotate(str, num) {
+  let newStr = ''
+  for(let i = str.length - 1; str.length - num <= i; i--) {
+    debugger
+    newStr = newStr + str[i]
+  }
+  return newStr + str
 }
+rotate('library', 3)
 
 /**
  *  母音を除いた文字列
@@ -23,8 +33,22 @@ function rotate(str, num) {
  *    'banana' => 'bnn'
  *
  */
+
+ // aiueoを取り除く
 function removeVowels(str) {
+  let vowels = 'aiueo'
+  let newStr = ''
+  for(let i = 0; i < str.length; i++) {
+    for(let j = 0; j < vowels.length; j ++) {
+      if(str[i] === vowels[j]) {
+
+      }
+    }
+  }
+
+  return newStr
 }
+removeVowels('banana')
 
 /**
  *  文字列のカウント
@@ -38,6 +62,7 @@ function removeVowels(str) {
  *
  */
 function countStr(s1, s2) {
+  s1.indexOf(s2)
 }
 
 /**
@@ -53,7 +78,19 @@ function countStr(s1, s2) {
  */
 
 function isPalindrome(str) {
+  let palindrome = ''
+  for(let i = str.length - 1; 0 <= i; i--) {
+    palindrome = palindrome + str[i]
+  }
+  if(str === palindrome) {
+    return true
+  } else {
+    return false
+  }
 }
+
+
+
 
 /**
  *  素数
@@ -70,6 +107,7 @@ function isPalindrome(str) {
  *
  */
 function isPrime(num) {
+
 }
 
 /**
@@ -88,6 +126,7 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
+
 }
 
 module.exports = {
