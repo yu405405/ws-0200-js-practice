@@ -6,21 +6,29 @@
  *  example:
  *    'library',  1 => 'ylibrar'
  *    'library',  3 => 'arylibr'
+ *    'library',  4 => 'rarylib'
+ *    'library',  5 => 'braryli'
  *    'library', -1 => 'ibraryl'
  *
  */
-// ①数値（num）の分だけ、最後から文字列を取得して、最初に持ってくる。
-// ②元の文字列（str）の破壊的処理
-// ③取得した文字列①と②を足して、新しい文字列を返す
+
 function rotate(str, num) {
-  let newStr = ''
-  for(let i = str.length - 1; str.length - num <= i; i--) {
+  let beforeStr = ''
+  for(let i = str.length - 1; str.length -1 - num < i; i--) {
     debugger
-    newStr = newStr + str[i]
+    beforeStr = str[i] + beforeStr
   }
-  return newStr + str
+
+  let afterStr = ''
+  for(let j = 0; j < str.length - num; j++) {
+    afterStr = afterStr + str[j]
+  }
+
+  let newStr = beforeStr + afterStr
+  return newStr
 }
-rotate('library', 3)
+// ※numが「負の数」の場合の処理を考える
+
 
 /**
  *  母音を除いた文字列
@@ -36,19 +44,23 @@ rotate('library', 3)
 
  // aiueoを取り除く
 function removeVowels(str) {
-  let vowels = 'aiueo'
   let newStr = ''
   for(let i = 0; i < str.length; i++) {
-    for(let j = 0; j < vowels.length; j ++) {
-      if(str[i] === vowels[j]) {
-
+    debugger
+    if(str[i] !== 'a') {
+      if(str[i] !== 'i') {
+        if(str[i] !== 'u') {
+          if(str[i] !== 'e') {
+            if(str[i] !== 'o') {
+              newStr = newStr + str[i]
+            }
+          }
+        }
       }
     }
   }
-
   return newStr
 }
-removeVowels('banana')
 
 /**
  *  文字列のカウント
@@ -62,7 +74,7 @@ removeVowels('banana')
  *
  */
 function countStr(s1, s2) {
-  s1.indexOf(s2)
+
 }
 
 /**
@@ -106,6 +118,8 @@ function isPalindrome(str) {
  *    11 => True
  *
  */
+
+//素数 = 「1と自身以外の約数を持たない数」「2以上の整数で割り切れない数」 = 「2以上の数で割っても割り切れない数」（2は例外）
 function isPrime(num) {
 
 }
@@ -126,7 +140,16 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
-
+  let sum = 0
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] !== 4) {
+      sum = sum + array[i]
+    }
+    if(array[i] === 4) {
+      sum = sum - array[i+1]
+    }
+  }
+  return sum
 }
 
 module.exports = {
