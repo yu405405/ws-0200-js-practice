@@ -59,29 +59,16 @@ class List {
    */
   remove(targetIndex) {
     // TODO:
-    // return this.data.slice(targetIndex)
-    //引数の数値分の要素を削除しているのでは? → 指定した数値までを全て削除している
-
-    // delete this.data[targetIndex]
-    // return this.data
-    // let newArray = []
-    // for(let i = 0; i < this.data.length; i++) {
-    //   if(i !== targetIndex) {
-    //     newArray.push(this.data[i])
-    //   }
-    // }
-    // console.log(newArray)
-    
-    // 1だったら配列の要素が1つ減る
-    // 2だったら配列の要素が2つ減る
     let newArray = []
-    let target = 2
+    let removeNumber = undefined
     for(let i = 0; i < this.data.length; i++) {
-      if(i !== target) {
+      if(i !== targetIndex) {
         newArray.push(this.data[i])
       }
     }
-    console.log(newArray)
+    removeNumber = this.data[targetIndex]
+    this.data = newArray
+    return removeNumber
   }
 
   /** リストの 末尾の要素を取得する
@@ -152,14 +139,13 @@ class List {
    */
   filter(target) {
     // TODO:
-    // リストの値を一つずつ取得 → 一致するかどうか判別 → pushして新しい配列（非破壊的）を作る
     let newArray = []
     for(let i = 0; i < this.data.length; i++) {
-      if(this.data[i] !== target) {
+      if(target !== this.data[i]) {
         newArray.push(this.data[i])
       }
     }
-    console.log(newArray)
+    return new List(newArray)
   }
 }
 
