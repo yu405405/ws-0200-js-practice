@@ -4,6 +4,15 @@
  */
 
 function printOneToTen() {
+  //レビュー前
+  // for(let i = 0; i < 11; i++) {
+  //   console.log(i)
+  // }
+
+  //レビュー後
+  for(let i = 0; i <= 10; i++) {
+    console.log(i)
+  }
 }
 
 /**
@@ -11,6 +20,9 @@ function printOneToTen() {
  * */
 
 function printOneToTenDesc() {
+  for(let i = 10; i >= 0; --i) {
+    console.log(i)
+  }
 }
 
 /**
@@ -19,6 +31,11 @@ function printOneToTenDesc() {
  */
 
 function printOneToTenWhile() {
+  let n = 0
+  while(n <= 10) {
+    console.log(n)
+    n++
+  }
 }
 
 /**
@@ -27,6 +44,11 @@ function printOneToTenWhile() {
  */
 
 function printOneToTenWhileDesc() {
+  let n = 11
+  while(n > 0) {
+    n--
+    console.log(n)
+  }
 }
 
 module.exports = {

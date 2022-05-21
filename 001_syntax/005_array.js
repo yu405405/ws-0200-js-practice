@@ -4,6 +4,9 @@
  */
 
 function printArray(array) {
+  for(let i = 0; i < array.length; i++) {
+    console.log(array.at(i))
+  }
 }
 
 /**
@@ -22,6 +25,16 @@ function printArray(array) {
  *
  */
 function getDays() {
+  let weekday = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ]
+  return weekday;
 }
 
 /**
@@ -35,6 +48,16 @@ function getDays() {
  */
 
 function findNum(array, num) {
+  if(array.indexOf(num) === -1) {
+    return false
+  } else {
+    return true
+  }
+  // if(array.includes(num) === true) {
+  //   return true
+  // }else {
+  //   return false
+  // }
 }
 
 /**
@@ -48,6 +71,32 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
+  // レビュー前
+  // let flag = false;
+  // array.forEach(function(val) {
+  //   let index = array.indexOf(val);
+  //   let lastIndex = array.lastIndexOf(val)
+
+  //   if(index !== lastIndex) {
+  //     flag = true
+  //   } 
+  // })
+  // return flag
+
+  // レビュー後
+  // 着目する要素を決めるためのループ
+  for(let i = 0; i < array.length; i++) { 
+
+    // 着目する要素と右隣から最後までを比較するためのループ
+    for(let j = i + 1; j < array.length; j++) {
+
+      // i番目とj番目の要素を比較して同じ場合は、重複があるとみなす。
+      if(array[i] === array[j]) {
+        return true
+      }
+    }
+  }
+  return false
 }
 
 module.exports = {

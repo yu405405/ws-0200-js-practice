@@ -12,6 +12,11 @@
  */
 
 function length(str) {
+  let strLength = ''
+  for(let i = 0; i < str.length + 1; i++) {
+    strLength = i
+  }
+  return strLength
 }
 
 /**
@@ -25,8 +30,17 @@ function length(str) {
  *    'fizzbuzz' => 'zzubzzif'
  *
  */
+
+// 文字列を1つずつ取り出す → 配列に格納する → 最後の文字列から取り出して結合させていく
+// ↑配列の経由なしで可能
 function reverse(str) {
+  let newStr = ''
+  for(let i = str.length - 1; 0 <= i ; i--) {
+    newStr = newStr + str[i]
+  }
+  return newStr
 }
+
 
 /**
  *  指定された文字列の位置を返却
@@ -41,6 +55,7 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
+  return str.indexOf(char)
 }
 
 /**
@@ -56,6 +71,7 @@ function findIndex(str, char) {
  */
 
 function split(a, b) {
+  return a.split(b)
 }
 
 /**
@@ -71,6 +87,11 @@ function split(a, b) {
  */
 
 function sum(array) {
+  let sumArray = Number()
+  for(let i = 0; i < array.length; i++) {
+    sumArray = sumArray + array[i]
+  }
+  return sumArray
 }
 
 /**
@@ -88,7 +109,14 @@ function sum(array) {
  */
 
 function average(array) {
+  let averageNumber = Number();
+  for(let i = 0; i < array.length; i++) {
+    debugger
+    averageNumber = averageNumber + array[i]
+  }
+  return Math.floor(averageNumber / array.length)
 }
+average([])
 
 /**
  *  配列の結合
@@ -103,6 +131,7 @@ function average(array) {
  */
 
 function concat(a, b) {
+  return a.concat(...b)
 }
 
 /**
@@ -118,6 +147,11 @@ function concat(a, b) {
  */
 
 function size(array) {
+  let arraySize = Number()
+  for(let i = 0; i < array.length; i++) {
+    arraySize = i + 1
+  }
+  return arraySize
 }
 
 /**
@@ -133,7 +167,23 @@ function size(array) {
  *
  */
 
+ // 比較する（比較演算子）
 function minMax(array) {
+  // return `max: ${Math.max(...array)}, min: ${Math.min(...array)}`
+  let min = undefined
+  for(let i = 0; i < array.length; i++) {
+    if(!min || min > array[i]) {
+      min = array[i]
+    }
+  }
+  
+  let max = undefined
+  for(let i = 0; i < array.length; i++) {
+    if(!max || max < array[i]) {
+      max = array[i]
+    }
+  }
+  return `max: ${max}, min: ${min}`
 }
 
 /**
@@ -148,6 +198,11 @@ function minMax(array) {
  */
 
 function seq(num) {
+  let array = []
+  for(let i = 0; i < num; i++) {
+    array.push(i)
+  }
+  return array;
 }
 
 /**
@@ -163,6 +218,13 @@ function seq(num) {
  */
 
 function omitSeq(num) {
+  let array = []
+  for(let i = 0; i <= num; i++) {
+    if(i % 2 !== 0) {
+      array.push(i)
+    }
+  }
+  return array
 }
 
 /**
@@ -178,6 +240,13 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
+  let newArray = []
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] <= num) {
+      newArray.push(array[i])
+    }
+  }
+  return newArray
 }
 
 
@@ -206,6 +275,16 @@ function filter(array, num) {
  */
 
 function fizzBuzz () {
+  for(let i = 1; i <= 100; i++) {
+    debugger
+    if(i % 15 === 0) {
+      console.log('FizzBuzz')
+    } else if(i % 3 === 0) {
+      console.log(`${i} Fizz`)
+    } else if(i % 5 === 0) {
+      console.log(`${i} Buzz`)
+    }
+  }
 }
 
 module.exports = {

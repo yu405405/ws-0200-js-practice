@@ -4,6 +4,7 @@
  */
 
 function length(str) {
+  return str.length
 }
 
 /**
@@ -12,6 +13,15 @@ function length(str) {
  */
 
 function lengthIsEven(str) {
+  // レビュー前
+  // if(str.length % 2 === 0) {
+  //   return true
+  // } else {
+  //   return false
+  // }
+
+  // レビュー後
+  return str.length % 2 === 0
 }
 
 /**
@@ -20,6 +30,7 @@ function lengthIsEven(str) {
  */
 
 function firstChar(str) {
+  return str.substring(0, 1)
 }
 
 /**
@@ -28,6 +39,7 @@ function firstChar(str) {
  */
 
 function lastChar(str) {
+  return str.slice(-1)
 }
 
 /**
@@ -37,6 +49,7 @@ function lastChar(str) {
  */
 
 function substring(str, a, b) {
+  return str.slice(a - 1, b)
 }
 
 /**
@@ -51,6 +64,23 @@ function substring(str, a, b) {
  * */
 
 function isInclude(a, b) {
+
+  // レビュー前
+  // const str = a.indexOf(b)
+  // if(str === -1) {
+  //   return false
+  // } else {
+  //   return true
+  // }
+
+  // レビュー後
+  return a.indexOf(b) !== -1
+  // aにbが含まれていなければ -1 を返すので 計算式が一致しているため true
+
+  // もしくは
+  // return a.indexOf(b) === 0
+  // aにbが含まれていれば 0 を返すので これも計算式が一致し true
+  // 上記は間違い。0ではなく、インデックス番号を返すので成立しない。0以上ならOK。
 }
 
 /**
@@ -69,6 +99,15 @@ function isInclude(a, b) {
  */
 
 function printByChar(str) {
+  // レビュー前
+  // for(let i = 0; i < str.length; i++) {
+  //   console.log(str[i].charAt())
+  // }
+
+  // レビュー後
+  for(let i = 0; i < str.length; i++) {
+    console.log(str[i])
+  }
 }
 
 
