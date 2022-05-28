@@ -8,26 +8,36 @@
  *    'library',  3 => 'arylibr'
  *    'library',  4 => 'rarylib'
  *    'library',  5 => 'braryli'
+ *    'library',  6 => 'ibraryl'
+ *    'library',  7 => 'library'
  *    'library', -1 => 'ibraryl'
- *
+ *    'library', -2 => 'braryli'
+ *    'library', -3 => 'rarylib'
+ *  
  */
+
+const { groupEnd } = require("console")
 
 function rotate(str, num) {
   let beforeStr = ''
+
+  // 後ろの文字列から
   for(let i = str.length - 1; str.length -1 - num < i; i--) {
-    debugger
     beforeStr = str[i] + beforeStr
   }
 
   let afterStr = ''
+  // 先頭の文字列から
   for(let j = 0; j < str.length - num; j++) {
     afterStr = afterStr + str[j]
   }
+  
 
   let newStr = beforeStr + afterStr
   return newStr
 }
 // ※numが「負の数」の場合の処理を考える
+// -1の場合、6と同じ結果
 
 
 /**
@@ -74,7 +84,11 @@ function removeVowels(str) {
  *
  */
 function countStr(s1, s2) {
-
+  let count = 0;
+  const regExp = new RegExp(s2, 'g')
+  const result = s1.match(regExp)
+  count = result.length
+  return count
 }
 
 /**
@@ -121,8 +135,21 @@ function isPalindrome(str) {
 
 //素数 = 「1と自身以外の約数を持たない数」「2以上の整数で割り切れない数」 = 「2以上の数で割っても割り切れない数」（2は例外）
 function isPrime(num) {
-
+  if(num === 1) {
+    return false
+  } else if(num === 2) {
+    return true
+  }
+  for(let i = 2; i < num; i++) {
+    // 自分自身の数以外で割り切れてしまった場合は、false(つまり素数ではない)
+    if(num % i === 0) {
+      return false
+    }
+  }
+  return true
 }
+// 【参考】https://note.com/strictlyes/n/na49084dbf944
+
 
 /**
  *  配列の4と次の数字を抜いた合計
@@ -140,13 +167,16 @@ function isPrime(num) {
  *
  */
 function sumWithout4andNext(array) {
-  let sum = 0
+  let sum = 0;
   for(let i = 0; i < array.length; i++) {
     if(array[i] !== 4) {
       sum = sum + array[i]
+      if(array[i-1] === 4) {
+        sum = sum - array[i]
+      }
     }
     if(array[i] === 4) {
-      sum = sum - array[i+1]
+      sum = sum
     }
   }
   return sum
