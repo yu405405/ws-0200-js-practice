@@ -10,7 +10,10 @@
  *    30 => 55
  */
 
+//なぜこのような式になるか
+
 function sumSequence (n, sum = 0) {
+  debugger
   if(n <= 1) {
     return 1
   }
@@ -31,7 +34,15 @@ function sumSequence (n, sum = 0) {
 //再帰関数を使用する
 
 function fibonacci (num, index = 0, array = []) {
-
+  if(num == 1) {
+    array.push(1)
+  } else if(num == 2) {
+    array.push(1,1)    
+  } else {
+    array.push(num + fibonacci(num-1))
+  }
+}
+{ 
   // https://ja.javascript.info/recursion#ref-1495
   // if(num === 1) {
   //   array.push(1)
